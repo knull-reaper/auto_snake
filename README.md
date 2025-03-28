@@ -1,4 +1,4 @@
-Auto Snake 🎮🐍
+<h3>Auto Snake 🎮🐍</h3>
 
 Welcome to **Auto Snake** – a modern twist on the classic Snake game! This project is built using Node.js and modern web technologies to deliver smooth, engaging gameplay that works seamlessly on both desktop and mobile devices.
 
