@@ -1,0 +1,173 @@
+:root {
+    --bg-color: #222;
+    --text-color: #fff;
+    --accent-color: #4CAF50;
+    --border-color: #444;
+    --hover-color: #333;
+    --transition-speed: 0.3s;
+    --side-menu-width: 300px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Press Start 2P', cursive;
+    background: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .game-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  canvas {
+    border: 2px solid var(--border-color);
+    background: #000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .side-menu {
+    width: var(--side-menu-width);
+    background: #1E1E1E;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .side-menu header h1 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .stats {
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  .stats dl {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .stats dt {
+    float: left;
+    clear: left;
+    margin-right: 10px;
+    font-size: 0.8rem;
+    color: #bbb;
+  }
+  
+  .stats dd {
+    margin: 0;
+    padding: 0 0 6px 0;
+    font-size: 0.8rem;
+    color: #fff;
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .controls button {
+    background: none;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 8px;
+    transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
+  }
+  
+  .controls button:hover,
+  .controls button:focus {
+    background: var(--hover-color);
+    transform: scale(1.1);
+    outline: none;
+  }
+  
+  .settings {
+    margin-bottom: 20px;
+  }
+  
+  .settings fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 15px;
+  }
+  
+  .settings legend {
+    font-size: 0.9rem;
+    color: #fff;
+    padding: 0 6px;
+  }
+  
+  .settings label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+    color: #fff;
+  }
+  
+  .settings input,
+  .settings select {
+    width: 100%;
+    padding: 6px;
+    margin-top: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: #1E1E1E;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.8rem;
+    transition: border-color var(--transition-speed) ease;
+  }
+  
+  .settings input:focus,
+  .settings select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+  }
+  
+  @media (max-width: 1024px) {
+    .container {
+      flex-direction: column;
+      height: auto;
+    }
+    .game-container {
+      width: 100%;
+      max-height: 60vh;
+    }
+    .side-menu {
+      width: 100%;
+      height: auto;
+      border-left: none;
+      border-top: 2px solid var(--border-color);
+    }
+  }
+  

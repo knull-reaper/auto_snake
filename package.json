@@ -1,0 +1,20 @@
+{
+    "name": "auto-snake",
+    "version": "1.0.0",
+    "description": "A secure, fully autonomous Snake game with real‑time updates using Express.js and Socket.io.",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "author": "r34p3r",
+    "license": "MIT",
+    "dependencies": {
+      "cors": "^2.8.5",
+      "express": "^4.18.2",
+      "express-rate-limit": "^6.7.0",
+      "helmet": "^7.0.0",
+      "socket.io": "^4.6.1"
+    }
+  }
+  

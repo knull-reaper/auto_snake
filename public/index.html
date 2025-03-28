@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto‑Snake</title>
+  <!-- Retro font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Game area -->
+    <div class="game-container">
+      <canvas id="game_canvas" role="img" aria-label="Snake game board"></canvas>
+    </div>
+
+    <!-- Side menu -->
+    <aside class="side-menu" role="complementary">
+      <header>
+        <h1>Auto‑Snake</h1>
+      </header>
+
+      <!-- Stats -->
+      <section class="stats">
+        <dl>
+          <dt>Score:</dt>
+          <dd id="score">0</dd>
+          <dt>Length:</dt>
+          <dd id="length">1</dd>
+          <dt>Time:</dt>
+          <dd id="time">0s</dd>
+        </dl>
+      </section>
+
+      <!-- Game controls -->
+      <section class="controls" role="group" aria-label="Game controls">
+        <button id="start_btn" aria-label="Start game">
+          <svg width="24" height="24" role="img" aria-hidden="true">
+            <polygon points="5,3 19,12 5,21" fill="#fff"></polygon>
+          </svg>
+        </button>
+        <button id="pause_btn" aria-label="Pause game">
+          <svg width="24" height="24" role="img" aria-hidden="true">
+            <rect x="6" y="4" width="4" height="16" fill="#fff"></rect>
+            <rect x="14" y="4" width="4" height="16" fill="#fff"></rect>
+          </svg>
+        </button>
+        <button id="reset_btn" aria-label="Reset game">
+          <svg width="24" height="24" role="img" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="#fff" stroke-width="2" fill="none"></circle>
+            <polyline points="12,6 12,12 16,14" stroke="#fff" stroke-width="2" fill="none"></polyline>
+          </svg>
+        </button>
+      </section>
+
+      <!-- Game settings -->
+      <section class="settings">
+        <fieldset>
+          <legend>Game Settings</legend>
+
+          <!-- Grid Size -->
+          <label for="grid_size">
+            Grid Size:
+            <input type="number" id="grid_size" value="20" min="10" max="40" step="5" required>
+          </label>
+
+          <!-- Snake Speed -->
+          <label for="snake_speed">
+            Snake Speed:
+            <input type="number" id="snake_speed" value="100" min="50" max="500" step="50" required>
+          </label>
+
+          <!-- Pathfinding (only A*, BFS, DFS) -->
+          <label for="pathfinding">
+            Pathfinding:
+            <select id="pathfinding" required>
+              <option value="astar" selected>A* (Fastest)</option>
+              <option value="bfs">BFS</option>
+              <option value="dfs">DFS</option>
+            </select>
+          </label>
+
+          <!-- Snake Gradient -->
+          <label for="snake_gradient">
+            Snake Gradient:
+            <select id="snake_gradient" required>
+              <option value="classic" selected>Classic</option>
+              <option value="blue">Blue</option>
+              <option value="rainbow">Rainbow</option>
+            </select>
+          </label>
+
+          <!-- Food Gradient -->
+          <label for="food_gradient">
+            Food Gradient:
+            <select id="food_gradient" required>
+              <option value="classic" selected>Classic</option>
+              <option value="green">Green</option>
+              <option value="gold">Gold</option>
+            </select>
+          </label>
+        </fieldset>
+      </section>
+    </aside>
+  </div>
+
+  <!-- Socket.io and client logic -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
